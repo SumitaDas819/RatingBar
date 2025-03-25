@@ -45,3 +45,22 @@ RatingBar(
         println("User selected rating: $newRating")
     }
 )
+
+
+How to Use 
+
+Add it in your root settings.gradle at the end of repositories:
+
+	dependencyResolutionManagement {
+		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+		repositories {
+			mavenCentral()
+			maven { url 'https://jitpack.io' }
+		}
+	}
+
+Add the dependency
+
+	dependencies {
+	        implementation 'com.github.SumitaDas819:RatingBar:1.0.0'
+	}
