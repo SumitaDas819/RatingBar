@@ -74,7 +74,25 @@ RatingBar(
 )
 ```
 
+## 📬 Contributing
+Contributions are welcome and encouraged! If you'd like to help improve this project, please follow these steps:
 
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/your-feature-name`)
+3. Make your changes
+4. Commit your changes (`git commit -am 'Add new feature'`)
+5. Push to the branch (`git push origin feature/your-feature-name`)
+6. Open a Pull Request
+
+**Before submitting your PR, make sure:**
+- Your code follows the project's coding style
+- You’ve added/updated tests if necessary
+- Documentation is updated (if applicable)
+
+Feel free to open an issue to discuss your ideas or report bugs.
+
+## 📝 License
+This project is licensed under the MIT License – see the LICENSE file for details.
 
 ## 🙋‍♀️ Author
 Developed by Sumita Das
