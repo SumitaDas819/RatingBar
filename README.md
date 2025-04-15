@@ -1,66 +1,82 @@
-Overview
+# ⭐ RatingBar - A Customizable Star Rating Bar for Jetpack Compose
 
-The RatingBar composable function is a customizable star rating bar that allows users to view or modify ratings. It supports different drawable resources for selected and unselected states, tint colors, and spacing between rating items. Optionally, the rating can be editable, enabling user interaction.
+`RatingBar` is a Jetpack Compose library that provides a customizable star rating bar. It allows users to view or set ratings with intuitive star icons. Designed with flexibility in mind, it supports tinting, custom drawables, adjustable sizes, spacing, and optional interactivity.
 
-Parameters
+---
 
-modifier: Modifier (optional) - Allows customization of the layout.
+## 🚀 Features
 
-maxRating: Int (default: 5) - Defines the maximum number of rating items.
+- ✅ Custom drawable resources for selected and unselected states  
+- 🎨 Support for tint colors on both states  
+- 📏 Adjustable icon size and spacing  
+- ✨ Editable mode to allow user interaction  
+- 🔄 Callback support to handle rating changes
 
-initialRating: Int (default: 2) - The initial rating value displayed. Must not exceed maxRating.
+---
 
-selectedDrawableRes: @DrawableRes Int - Resource ID for the selected (filled) rating item.
+## 📦 Installation
 
-unSelectedDrawableRes: @DrawableRes Int - Resource ID for the unselected (empty) rating item.
+### Step 1: Add JitPack to your root `settings.gradle` file
 
-selectedDrawableTint: Color (default: Color(0xFFED8A19)) - Tint color for the selected rating items.
+```kotlin
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+### Step 2: Add the dependency to your build.gradle (app module)
+```
+dependencies {
+    implementation 'com.github.SumitaDas819:RatingBar:1.0.0'
+}
+```
+## 🛠️ Parameters
 
-unSelectedDrawableTint: Color (default: Color.Gray) - Tint color for the unselected rating items.
+| Parameter                 | Type                | Default              | Description                                           |
+|--------------------------|---------------------|----------------------|-------------------------------------------------------|
+| `modifier`               | `Modifier`          | _optional_           | Modifier for layout customization                     |
+| `maxRating`              | `Int`               | `5`                  | Maximum number of rating items                        |
+| `initialRating`          | `Int`               | `2`                  | Initial rating value (must not exceed `maxRating`)    |
+| `selectedDrawableRes`    | `@DrawableRes Int`  | _required_           | Drawable resource for selected (filled) icon          |
+| `unSelectedDrawableRes`  | `@DrawableRes Int`  | _required_           | Drawable resource for unselected (empty) icon         |
+| `selectedDrawableTint`   | `Color`             | `Color(0xFFED8A19)`  | Tint color for selected icons                         |
+| `unSelectedDrawableTint` | `Color`             | `Color.Gray`         | Tint color for unselected icons                       |
+| `imageSize`              | `Dp`                | `30.dp`              | Size of each rating icon                              |
+| `itemSpacing`            | `Dp`                | `10.dp`              | Spacing between icons                                 |
+| `isEditable`             | `Boolean`           | `false`              | Enables rating input if `true`                        |
+| `rating`                 | `(Int) -> Unit`     | _optional_           | Callback to receive the selected rating               |
 
-imageSize: Dp (default: 30.dp) - Size of each rating icon.
+## 🧩 Example Usage
 
-itemSpacing: Dp (default: 10.dp) - Spacing between rating items.
-
-isEditable: Boolean (default: false) - Determines if the rating bar is interactive.
-
-rating: (Int) -> Unit - Callback function to receive the selected rating value.
-
-Example Usage
-
-1. Read-Only Rating Bar
-
+## 📖 Read-Only Rating Bar
+```
 RatingBar(
     maxRating = 5,
-    initialRating = 3
+    initialRating = 3,
+    selectedDrawableRes = R.drawable.ic_star_filled,
+    unSelectedDrawableRes = R.drawable.ic_star_outline
 )
-
-2. Editable Rating Bar with Callback
-
+```
+## ✍️ Editable Rating Bar with Callback
+```
 RatingBar(
     maxRating = 5,
     initialRating = 4,
     isEditable = true,
+    selectedDrawableRes = R.drawable.ic_star_filled,
+    unSelectedDrawableRes = R.drawable.ic_star_outline,
     rating = { newRating ->
         println("User selected rating: $newRating")
     }
 )
+```
 
 
-How to Use 
 
-Add it in your root settings.gradle at the end of repositories:
+## 🙋‍♀️ Author
+Developed by Sumita Das
 
-	dependencyResolutionManagement {
-		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-		repositories {
-			mavenCentral()
-			maven { url 'https://jitpack.io' }
-		}
-	}
-
-Add the dependency
-
-	dependencies {
-	        implementation 'com.github.SumitaDas819:RatingBar:1.0.0'
-	}
+Feel free to contribute, suggest features, or report issues! ⭐
