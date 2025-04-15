@@ -57,7 +57,8 @@ RatingBar(
     maxRating = 5,
     initialRating = 3,
     selectedDrawableRes = R.drawable.ic_star_filled,
-    unSelectedDrawableRes = R.drawable.ic_star_outline
+    unSelectedDrawableRes = R.drawable.ic_star_outline,
+    rating={}
 )
 ```
 ## ✍️ Editable Rating Bar with Callback
